@@ -56,7 +56,7 @@ void NN_NodeLearn( NN_Object obj, NN_Var erSum, const NN_Var *befoOut, NN_Var le
 
 	for ( size_t weightIndex = 0; weightIndex<_obj->inputNum; weightIndex++ )
 	{
-		_obj->w[weightIndex] -= learnRate*_obj->e*befoOut[weightIndex];
+		_obj->w[weightIndex] -= learnRate * _obj->e * befoOut[weightIndex];
 	}
 
 	_obj->b -= learnRate*_obj->e;

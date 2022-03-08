@@ -9,6 +9,6 @@ void NN_NerveAppendLayer( NN_Object obj, size_t nodeNum, NN_ActiveFunc activeFun
 
 size_t NN_NerveRun( NN_Object obj, const NN_Var *inputData, NN_Var *output );
 
-void NN_NerveLearn( NN_Object obj, const NN_Var *teacher );
+void NN_NerveLearn( NN_Object obj, const NN_Var *teacher, NN_Var learn_rate );
 
 #endif /*NN_NERVE_H*/

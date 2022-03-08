@@ -11,4 +11,4 @@ void NN_NodeLearn( NN_Object obj, NN_Var erSum, const NN_Var *befoOut, NN_Var le
 
 NN_Var NN_NodeCulcEr( NN_Object obj, size_t weightIndex );
 
-#endif NN_NODE_H
+#endif /*NN_NODE_H*/

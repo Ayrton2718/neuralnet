@@ -17,4 +17,4 @@ void NN_LayerLearnTeacher(NN_Object obj, const NN_Var *aftLayer, const NN_Var *b
 
 NN_Var NN_LayerCulcErSum( NN_Object obj, size_t weightIndex );
 
-#endif NN_LAYRE_H
+#endif /*NN_LAYRE_H*/

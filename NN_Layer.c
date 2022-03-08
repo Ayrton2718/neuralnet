@@ -64,9 +64,9 @@ void NN_LayerLearnTeacher( NN_Object obj, const NN_Var *aftLayer, const NN_Var *
 {
 	struct NN_Layer *_obj = (struct NN_Layer*)obj;
 
-	for (size_t nodeIndex = 0; nodeIndex<_obj->nodeNum; nodeIndex++)
+	for (size_t nodeIndex = 0; nodeIndex < _obj->nodeNum; nodeIndex++)
 	{
-		NN_NodeLearn(_obj->nodes[nodeIndex], (NN_Node), befoLayer, learnRate);
+		NN_NodeLearn(_obj->nodes[nodeIndex], (NN_Var)aftLayer[nodeIndex], befoLayer, learnRate);
 	}
 }
 

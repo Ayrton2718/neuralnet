@@ -5,4 +5,4 @@ void SC_RandomSetSeed( unsigned long seed );
 
 float SC_RandomOut( void );
 
-#endif SC_RANDOM_H
+#endif /*SC_RANDOM_H*/

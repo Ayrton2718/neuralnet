@@ -16,7 +16,8 @@ NN_Object NN_NerveAllocInit( size_t inputDataNum, size_t layerNum )
 	_obj->inputDataNum = inputDataNum;
 	_obj->layerNum = layerNum;
 	_obj->layerAppendCount = 0;
-	_obj->layers = (NN_Object*)malloc( sizeof( NN_Object )*_obj->layerNum);
+	_obj->layers = (NN_Object*)malloc( sizeof( NN_Object ) *_obj->layerNum);
+	return _obj;
 }
 
 void NN_NerveAppendLayer( NN_Object obj, size_t nodeNum, NN_ActiveFunc activeFunc, NN_DerivActive derivFunc )
@@ -53,12 +54,14 @@ size_t NN_NerveRun( NN_Object obj, const NN_Var *inputData, NN_Var *output )
 }
 
 
-void NN_NerveLearn( NN_Object obj, const NN_Var *teacher)
+void NN_NerveLearn( NN_Object obj, const NN_Var *teacher, NN_Var learn_rate )
 {
 	struct NN_Nerve *_obj = (struct NN_Nerve*)obj;
 
+	NN_LayerLearnTeacher( _obj->layers[_obj->layerNum], teacher, teacher, learn_rate );
+
 	for ( size_t layerIndex = _obj->layerNum;  0<=layerIndex; layerIndex-- )
 	{
-		NN_LayerLearn( _obj->layers[layerIndex],  );
+		NN_LayerLearn( _obj->layers[layerIndex], teacher, _obj->layers[layerIndex] - 1, learn_rate );
 	}
 }
